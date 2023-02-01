@@ -37,4 +37,4 @@ setTimeout(() => {
   .catch(error => {
     console.error(error);
   });
-}, 1000);
+}, 1400);
