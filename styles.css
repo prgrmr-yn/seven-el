@@ -113,9 +113,9 @@ tbody:hover tr:hover td {
   height: 100px;
   width: 20%;
   text-align: center;
-  padding: 1em;
+  padding: 0.5em;
   margin: 0 auto 1em;
-  display: inline-block;
+  display: block;
   vertical-align: top;
 }
 
@@ -124,5 +124,5 @@ tbody:hover tr:hover td {
 */
 svg path,
 svg rect{
-  fill: #FF6700;
+  fill: #0f6f1d;
 }
