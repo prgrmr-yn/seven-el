@@ -1,6 +1,9 @@
+const container = document.querySelector('.container')
 const ulEl = document.querySelector('.responsive-table')
-console.log(ulEl);
-ulEl.innerHTML = 'Loading.....  '
+const loader = document.querySelector('.loader')
+
+console.log(loader);
+container.style.display = 'none'
 let tableData = '';
 
 function func(data) {
@@ -28,7 +31,8 @@ fetch('https://projectzerothree.info/api.php?format=json')
   });
 
 setTimeout(() => {
-  ulEl.innerHTML = ''
+  container.style.display = 'block'
+  loader.style.display = 'none'
   fetch(url)
   .then(response => response.json())
   .then(data => {
@@ -37,4 +41,4 @@ setTimeout(() => {
   .catch(error => {
     console.error(error);
   });
-}, 1400);
+}, 2400);
