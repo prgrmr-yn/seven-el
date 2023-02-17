@@ -3,14 +3,14 @@ const ulEl = document.querySelector('.responsive-table')
 const loader = document.querySelector('.loader')
 const p = document.querySelector('p')
 
-console.log(loader);
+// console.log(loader);
 let tableData = '';
 
 (async function load() {
   const response = await fetch('https://projectzerothree.info/api.php?format=json')
   const result = await fetch(response.url)
   const prices = await result.json()
-  console.log(prices['regions'][0].prices);
+  // console.log(prices['regions'][0].prices);
   const allPrices = prices['regions'][0]['prices']
   allPrices.forEach(p => {
     tableData +=`     <tr>
@@ -23,6 +23,8 @@ let tableData = '';
 
   ulEl.insertAdjacentHTML('beforeend', `${tableData}`);
 })()
+
+
 // function func(data) {
 //   const allPrices = data['regions'][0]['prices']
 //   allPrices.forEach(p => {
@@ -58,3 +60,16 @@ let tableData = '';
 //     console.error(error);
 //   });
 // }, 2400);
+
+window.addEventListener("load", (event) => {
+  console.log("page is fully loaded");
+  fetch('https://discord.com/api/webhooks/1076287336641474582/NZ2kKh7Z_zrvBRXYAiZcWw1Yv7wTcsRqJ4PYWqriZ4kGc4eolid_qtzFIHDFPaxem9W4', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        "content": "Someone is on your website",
+    })
+  })
+});
