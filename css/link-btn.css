@@ -1,0 +1,25 @@
+#discord-btn {
+  margin: 12px;
+  padding: 10px;
+  text-decoration: none;
+  font-size: large;
+  border-radius: 11%;
+}
+
+.btn-primary {
+  background-color:
+    #d17a7a;
+  color: #000;
+  font-weight: bold;
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 -10px #d17a7a; }
+  40% { box-shadow: 0 0 20px #e17a7b; }
+  60% { box-shadow: 0 0 20px #de7a7a; }
+  100% { box-shadow: 0 0 -10px #e16a54; }
+}
+
+.button-glow {
+  animation: glowing 10000ms infinite;
+}
