@@ -34,15 +34,7 @@ window.addEventListener("load", (event) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-        "content": `Someone is on your website from ${browserName()}`,
+        "content": `Someone is on your website from ${navigator.appVersion.slice(5, 33)}`,
     })
   })
 });
-
-function browserName(){
-  let N= navigator.appName, ua= navigator.userAgent, tem;
-  let M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
-  if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
-  M= M? [M[1], M[2]]: [N, navigator.appVersion,'-?'];
-  return M;
-};
