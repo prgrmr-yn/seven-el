@@ -126,3 +126,7 @@ svg path,
 svg rect{
   fill: #0f6f1d;
 }
+
+#lat:hover{
+  color: blue;
+}

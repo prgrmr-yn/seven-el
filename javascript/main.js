@@ -14,14 +14,31 @@ const getFuelPrices = (async function load() {
   const allPrices = prices['regions'][0]['prices']
   allPrices.forEach(p => {
     tableData +=`     <tr>
+    <td>${p.type} </td>
     <td><strong>${p.suburb} ${p.state}</strong></td>
     <td>${p.price}</td>
-    <td>${p.type} </td>
+    <td id="lat">${p.lat} </td>
+    <td id="lng">${p.lng} </td>
   </tr>`
   });
   loader.style.display = 'none'
 
   ulEl.insertAdjacentHTML('beforeend', `${tableData}`);
+
+  // Get all latitude and longitude cells
+  const latCells = document.querySelectorAll('td:nth-child(4)');
+  const lngCells = document.querySelectorAll('td:nth-child(5)');
+
+  // Add click event listener to each latitude and longitude cell
+  [...latCells, ...lngCells].forEach(cell => {
+    cell.addEventListener('click', () => {
+      // Copy cell text to clipboard
+      navigator.clipboard.writeText(cell.innerText.trim())
+        .then(() => console.log(`Copied ${cell.innerText.trim()} to clipboard`))
+        .catch(error => console.error('Failed to copy to clipboard', error));
+    });
+  });
+
 })()
 
 
@@ -37,4 +54,5 @@ window.addEventListener("load", (event) => {
         "content": `Someone is on your website from ${navigator.appVersion.slice(5, 33)}`,
     })
   })
+
 });
