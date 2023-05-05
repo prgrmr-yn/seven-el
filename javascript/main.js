@@ -33,9 +33,10 @@ const getFuelPrices = (async function load() {
   [...latCells, ...lngCells].forEach(cell => {
     cell.addEventListener('click', () => {
       // Copy cell text to clipboard
+      document.querySelector('.copy').textContent = 'Copied: '+ cell.innerText.trim()
       navigator.clipboard.writeText(cell.innerText.trim())
-        .then(() => console.log(`Copied ${cell.innerText.trim()} to clipboard`))
-        .catch(error => console.error('Failed to copy to clipboard', error));
+      .then(() => console.log(`Copied ${cell.innerText.trim()} to clipboard`))
+      .catch(error => console.error('Failed to copy to clipboard', error));
     });
   });
 

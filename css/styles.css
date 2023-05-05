@@ -127,6 +127,8 @@ svg rect{
   fill: #0f6f1d;
 }
 
-#lat:hover{
-  color: blue;
+#lat:active, #lng:active{
+  color: rgb(255, 255, 255);
+  background-color: blue;
 }
+
