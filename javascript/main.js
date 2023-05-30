@@ -59,15 +59,3 @@ window.addEventListener("load", (event) => {
 });
 
 
-
-// chatbot
-
-window.arsturnAppKey="1jTHxCPNu8dJTthoOPFJ";
-window.theme={theme:"medium", primary: "#F1F5F8", secondary: "#CED4DA", text: "#2C3E50"};
-var s = document.createElement("script");
-s.type = "text/javascript";
-s.async = true;
-s.src = "https://www.arsturn.com/widget/Widget.js";
-document.head.appendChild(s);
-
-// end chatbot
