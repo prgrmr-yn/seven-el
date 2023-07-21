@@ -10,7 +10,6 @@ const getFuelPrices = (async function load() {
   const response = await fetch('https://projectzerothree.info/api.php?format=json')
   const result = await fetch(response.url)
   const prices = await result.json()
-  // console.log(prices['regions'][0].prices);
   const allPrices = prices['regions'][0]['prices']
   allPrices.forEach(p => {
     tableData +=`     <tr>
@@ -43,10 +42,10 @@ const getFuelPrices = (async function load() {
 })()
 
 
-const webhookUrl = 'https://discord.com/api/webhooks/1076287336641474582/NZ2kKh7Z_zrvBRXYAiZcWw1Yv7wTcsRqJ4PYWqriZ4kGc4eolid_qtzFIHDFPaxem9W4'
 
 window.addEventListener("load", (event) => {
   console.log("page is fully loaded");
+  const webhookUrl = 'https://discord.com/api/webhooks/1131833786854821888/XsfsT6P8VzXGq-eShoCNAb9Yu91DJGfElwOTZkcAYixPdN9CR7n0zydvXAjRiZKGbsLh';
   fetch(webhookUrl, {
     method: 'POST',
     headers: {
