@@ -42,19 +42,3 @@ const getFuelPrices = (async function load() {
 })()
 
 
-
-const webhookUrl = 'https://discord.com/api/webhooks/1131833786854821888/XsfsT6P8VzXGq-eShoCNAb9Yu91DJGfElwOTZkcAYixPdN9CR7n0zydvXAjRiZKGbsLh';
-window.addEventListener("load", (event) => {
-  console.log("page is fully loaded");
-  fetch(webhookUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-        "content": `Someone is on your website from ${navigator.appVersion.slice(5, 33)}
-        `,
-    })
-  })
-
-});
