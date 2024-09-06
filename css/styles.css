@@ -31,8 +31,8 @@ th {
   font-weight: bold;
 	padding: 10px 15px;
 	position: relative;
-  	text-shadow: none;
-/* 	text-shadow: 0 1px 0 #000;	 */
+  text-shadow: none;
+
 }
 
 th:after {
@@ -133,5 +133,15 @@ svg rect{
 }
 
 #lat:hover, #lng:hover{
-  background-color: #ffffff;
+  background-color: #fcf9f9;
+}
+
+
+/* Media Queries for responsive design */
+
+@media screen and (max-width: 600px) {
+  #header-lat,#header-lng,#lat, #lng {
+    display: none;
+  }
+
 }
