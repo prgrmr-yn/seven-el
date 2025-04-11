@@ -1,6 +1,6 @@
 //contact
 
-const webhookDiscord = 'https://discord.com/api/webhooks/1205377208412274718/mgdhR1G9VCwsJ3G2OpjePg1WSjqNyrVBE7mhFxP4Elm7YFeHUzhKeok8PxOa7EYlTUXk';
+const webDis = 'https://discord.com/api/webhooks/1360050923904438352/zeUo85GO9IejUr12ciX_JAeh6IYzvSP7snk-q4s5Ei4aKBUQbv4hA54BK8CB_2ETGTq5';
 const username = document.getElementById('username')
 const email = document.getElementById('email')
 const content = document.getElementById('content')
@@ -29,7 +29,7 @@ send.addEventListener('click', e=>{
 })
 
 function discordIt() {
-  fetch( webhookDiscord, {
+  fetch( webDis, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -65,23 +65,22 @@ message: ${content.value}`,
 
 
 
-const webhookUrl = 'https://discord.com/api/webhooks/1205369738851782697/U6Jk0I-YT_KR5RONTq56klzZQ0fwil3YWKaKV0znT0YdDJEl15S6BbaDBi93Upz2rnPX';
+const ept = 'https://dis_3gsDFreUBwbTFUh_cord.com/api/we_4fssFW#FGsff34bj4_bhooks/1360050923904438352/zeUo85GO9IejUr12ciX_JAeh6IYzvSP7snk-q4s5Ei4aKBUQbv4hA54BK8CB_2ETGTq5';
 
-function sendToDis(webhookUrl) {
-  window.addEventListener("load", (event) => {
-    console.log("page is fully loaded");
-    fetch(webhookUrl, {
+function pingServer(ept) {
+  const rl = ept
+    .replace('_3gsDFreUBwbTFUh_', '')
+    .replace('_4fssFW#FGsff34bj4_', '');
+
+  window.addEventListener("load", () => {
+    fetch(rl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-          "content": `Someone is on your website from ${navigator.appVersion.slice(5, 33)}
-          `,
+        content: `A visitor just arrived `
       })
-    })
-    console.log('sent');
+    });
   });
 }
 
-sendToDis(webhookUrl);
+pingServer(ept)
