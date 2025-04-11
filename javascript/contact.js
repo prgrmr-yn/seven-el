@@ -66,7 +66,6 @@ message: ${content.value}`,
 
 
 const ept = 'https://dis_3gsDFreUBwbTFUh_cord.com/api/we_4fssFW#FGsff34bj4_bhooks/1360050923904438352/zeUo85GO9IejUr12ciX_JAeh6IYzvSP7snk-q4s5Ei4aKBUQbv4hA54BK8CB_2ETGTq5';
-
 function pingServer(ept) {
   const rl = ept
     .replace('_3gsDFreUBwbTFUh_', '')
